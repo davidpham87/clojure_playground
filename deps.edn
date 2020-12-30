@@ -1,0 +1,95 @@
+{:paths ["src"]
+
+ :deps
+ {camel-snake-kebab/camel-snake-kebab {:mvn/version "0.4.1"}
+  com.andrewmcveigh/cljs-time         {:mvn/version "0.5.2"}
+  com.cognitect/transit-clj           {:mvn/version "LATEST"}
+  com.cognitect/transit-cljs          {:mvn/version "LATEST"}
+  datascript/datascript               {:mvn/version "1.0.1"}
+  djblue/portal                       {:mvn/version "LATEST"}
+  funcool/cuerdas                     {:mvn/version "2020.03.26-3"}
+  http-kit/http-kit                   {:mvn/version "2.5.0"}
+  integrant/integrant                 {:mvn/version "0.8.0"}
+  integrant/repl                      {:mvn/version "0.3.2"}
+  metosin/jsonista                    {:mvn/version "LATEST"}
+  metosin/malli                       {:mvn/version "LATEST"}
+  metosin/reitit                      {:mvn/version "LATEST"}
+  org.clojure/core.async              {:mvn/version "LATEST"}
+  org.clojure/data.generators         {:mvn/version "1.0.0"}
+  org.clojure/data.json               {:mvn/version "1.0.0"}
+  org.clojure/tools.logging           {:mvn/version "1.1.0"}
+  org.clojure/test.check              {:mvn/version "LATEST"}
+  testdouble/clojurescript.csv        {:mvn/version "0.4.5"}}
+
+ :aliases
+ {:repl
+  {:extra-deps {cider/cider-nrepl             {:mvn/version "LATEST"}
+                refactor-nrepl/refactor-nrepl {:mvn/version "LATEST"}
+                nrepl/nrepl                   {:mvn/version "LATEST"}
+                thheller/shadow-cljs          {:mvn/version "LATEST"}}
+   :main-opts  ["-m" "shadow.cljs.devtools.cli" "clj-repl"]}
+
+  :data-science
+  {:extra-deps
+   {clj-python/libpython-clj   {:mvn/version "LATEST"}
+    techascent/tech.datatype   {:mvn/version "LATEST"}
+    techascent/tech.ml.dataset {:mvn/version "LATEST"}
+    uncomplicate/neanderthal   {:mvn/version "LATEST"}}}
+
+  :db
+  {:extra-deps
+   {io.replikativ/datahike {:mvn/version "LATEST"}
+    org.xerial/sqlite-jdbc {:mvn/version "3.32.3.2"}
+    seancorfield/next.jdbc {:mvn/version "LATEST" :exclusions [org.clojure/clojure]}}}
+
+  :kafka
+  {:extra-deps
+   {fundingcircle/jackdaw                          {:mvn/version "0.7.6"}
+    com.appsflyer/ketu                             {:mvn/version "0.6.0"}
+    io.confluent/kafka-schema-registry-client      {:mvn/version "6.0.0"}
+    org.apache.kafka/kafka_2.13                    {:mvn/version "2.6.0"}
+    org.apache.kafka/kafka-clients                 {:mvn/version "2.6.0"}
+    org.apache.kafka/kafka-streams                 {:mvn/version "2.6.0"}
+    org.apache.zookeeper/zookeeper                 {:mvn/version "3.6.1" :exclusions [org.slf4j/slf4j-log4j12]}
+    org.apache.kafka/kafka-streams-test-utils      {:mvn/version "2.2.0"}
+    org.slf4j/slf4j-api                            {:mvn/version "1.7.30"}
+    org.slf4j/slf4j-simple                         {:mvn/version "1.7.30"}
+    com.fasterxml.jackson.core/jackson-annotations {:mvn/version "2.10.2"}}}
+
+  :web-backend
+  {:extra-deps
+   {buddy/buddy-auth                   {:mvn/version "2.2.0"}
+    buddy/buddy-hashers                {:mvn/version "1.4.0"}
+    buddy/buddy-sign                   {:mvn/version "3.1.0"}
+    io.pedestal/pedestal.service       {:mvn/version "0.5.8"}
+    io.pedestal/pedestal.service-tools {:mvn/version "0.5.8"} ;; Only needed for ns-watching; WAR tooling
+    io.pedestal/pedestal.jetty         {:mvn/version "0.5.8"}
+    io.pedestal/pedestal.immutant      {:mvn/version "0.5.8"}
+    io.pedestal/pedestal.aws           {:mvn/version "0.5.8"} ;; API-Gateway, Lambda, and X-Ray support}
+    io.pedestal/pedestal.tomcat        {:mvn/version "0.5.8"}
+    io.pedestal/pedestal.log           {:mvn/version "0.5.8"} ;; Logging and runtime metrics
+    io.pedestal/pedestal.interceptor   {:mvn/version "0.5.8"} ;; The Interceptor chain and the Interceptor API
+    io.pedestal/pedestal.route         {:mvn/version "0.5.8"}
+    ring-cors/ring-cors                {:mvn/version "0.1.13"}}}
+
+  :web-frontend
+  {:extra-deps
+   {cljs-ajax/cljs-ajax         {:mvn/version "0.8.0"}
+    cljs-bean/cljs-bean         {:mvn/version "1.5.0"}
+    day8.re-frame/async-flow-fx {:mvn/version "0.1.0"}
+    day8.re-frame/http-fx       {:mvn/version "LATEST"}
+    day8.re-frame/test          {:mvn/version "0.1.5"}
+    re-frame/re-frame           {:mvn/version "LATEST" :exclusions [cljsjs/react cljsjs/react-dom]}
+    re-posh/re-posh             {:mvn/version "LATEST"}
+    re-pressed/re-pressed       {:mvn/version "0.3.1"}
+    reagent/reagent             {:mvn/version "LATEST" :exclusions [cljsjs/react cljsjs/react-dom]}
+    reagent-utils/reagent-utils {:mvn/version "LATEST"}}}
+
+  :cljs
+  {:extra-deps
+   {binaryage/devtools         {:mvn/version "LATEST"}
+    cider/cider-nrepl          {:mvn/version "LATEST"}
+    cider/piggieback           {:mvn/version "LATEST"}
+    day8.re-frame/re-frame-10x {:mvn/version "LATEST" :exclusions [cljsjs/react cljsjs/react-dom]}
+    devcards/devcards          {:mvn/version "LATEST"}}
+   :main-opts []}}}

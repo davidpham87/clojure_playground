@@ -1,0 +1,63 @@
+{:deps {:aliases [:repl :cljs]}
+ :dev-http {8080 "public"}
+ :nrepl {:port 3333
+         :middleware [refactor-nrepl.middleware/wrap-refactor]}
+
+ :builds
+ {:app {:target :browser
+        :asset-path "js"
+        :module-loader true
+        :modules {:main {:init-fn app.core/main}}
+
+        :dev {:output-dir "public/js"
+              :compiler-options
+              {:closure-warnings {:global-this :off}
+               :closure-defines
+               {re-frame.trace.trace-enabled? true
+                "re_frame.trace.trace_enabled_QMARK_" true
+                "day8.re_frame.tracing.trace_enabled_QMARK_" true}}}
+
+        :release
+        {:output-dir "output/app/js"
+         :compiler-options
+         {:output-feature-set :es6
+          :infer-externs :auto
+          :optimizations :advanced}}
+
+        :devtools
+        {:browser-inject :main
+         :autoload true
+         :loader-mode :eval
+         :repl-pprint true
+         :http-root "public"
+         :preloads [shadow.remote.runtime.cljs.browser
+                    devtools.preload]}}
+
+  :snb {:target :browser
+        :asset-path "js"
+        :module-loader true
+        :modules {:main {:init-fn snb.core/main}}
+
+        :dev {:output-dir "public/js"
+              :compiler-options
+              {:closure-warnings {:global-this :off}
+               :closure-defines
+               {re-frame.trace.trace-enabled? true
+                "re_frame.trace.trace_enabled_QMARK_" true
+                "day8.re_frame.tracing.trace_enabled_QMARK_" true}}}
+
+        :release
+        {:output-dir "output/snb/js"
+         :compiler-options
+         {:output-feature-set :es6
+          :infer-externs :auto
+          :optimizations :advanced}}
+
+        :devtools
+        {:browser-inject :main
+         :autoload true
+         :loader-mode :eval
+         :repl-pprint true
+         :http-root "public"
+         :preloads [shadow.remote.runtime.cljs.browser
+                    devtools.preload]}}}}

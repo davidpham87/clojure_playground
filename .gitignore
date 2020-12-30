@@ -1,0 +1,9 @@
+.cpcache/*
+.clj-kondo/*
+.cpcache/*
+.lsp/*
+.shadow-cljs/*
+datahike-db
+node_modules/*
+output/*
+public/js/*

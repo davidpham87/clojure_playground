@@ -1,0 +1,23 @@
+{
+  "name": "clojure",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "buffer": "^5.6.0",
+    "create-react-class": "15.6.3",
+    "highlight.js": "9.18.1",
+    "plotly.js": "^1.54.6",
+    "process": "^0.11.10",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-highlight.js": "1.0.7",
+    "react-plotly.js": "^2.4.0",
+    "spectacle": "^6.2.0"
+  }
+}
